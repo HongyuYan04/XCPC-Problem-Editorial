@@ -15,10 +15,9 @@ For each $i = 1, 2, \dots, N$, solve the following problem:
 
 The input is given from Standard Input in the following format:
 
-```
 $N$ $K$
 $A_1$ $A_2$ $\dots$ $A_N$
-```
+
 
 ### Output
 
