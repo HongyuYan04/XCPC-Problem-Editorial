@@ -57,6 +57,8 @@ For $i=5$, choosing $A_5$ and $A_3$ yields $\gcd(\lbrace 12,6 \rbrace) = 6$, whi
 记值域为 $V$, 时间复杂度为 $\mathcal{O}(VlogV + NlogV)$。
 
 ```
+c++
+
 #include <bits/stdc++.h>
 
 using i64 = long long;
