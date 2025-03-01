@@ -66,37 +66,36 @@ constexpr int V = 1E6;
 int f[V + 1][240], ind[V + 1], cntm[V + 1];
 
 inline int read() {
-	bool sym = false; int res = 0; char ch = getchar();
-	while (ch < '0' || ch > '9') sym |= ch == '-', ch = getchar();
-	while (ch >= '0' && ch <= '9') res = (res << 3) + (res << 1) + (ch & 15), ch = getchar();
-	return sym ? -res : res;
+    bool sym = false; int res = 0; char ch = getchar();
+    while (ch < '0' || ch > '9') sym |= ch == '-', ch = getchar();
+    while (ch >= '0' && ch <= '9') res = (res << 3) + (res << 1) + (ch & 15), ch = getchar();
+    return sym ? -res : res;
 }
 
 int main() {
-	for (int i = V; i >= 1; i--) {
-		for (int j = i; j <= V; j += i) {
-			f[j][ind[j]++] = i;
-		}
-	}
+    for (int i = V; i >= 1; i--) {
+        for (int j = i; j <= V; j += i) {
+            f[j][ind[j]++] = i;
+        }
+    }
 	
-	int N = read(), K = read();
+    int N = read(), K = read();
+    std::vector<int> A(N);
+    for (int i = 0; i < N; i++) {
+        A[i] = read();
+        for (int j = 0; j < ind[A[i]]; j++) {
+            cntm[f[A[i]][j]]++;
+        }
+    }
 	
-	std::vector<int> A(N);
-	for (int i = 0; i < N; i++) {
-		A[i] = read();
-		for (int j = 0; j < ind[A[i]]; j++) {
-			cntm[f[A[i]][j]]++;
-		}
-	}
-	
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < ind[A[i]]; j++) {
-			if (cntm[f[A[i]][j]] >= K) {
-				printf("%d\n", f[A[i]][j]);
-				break;
-			}
-		}
-	}
-	return 0;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < ind[A[i]]; j++) {
+            if (cntm[f[A[i]][j]] >= K) {
+                printf("%d\n", f[A[i]][j]);
+                break;
+            }
+        }
+    }
+    return 0;
 }
 ```
