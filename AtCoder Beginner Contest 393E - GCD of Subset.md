@@ -16,6 +16,7 @@ For each $i = 1, 2, \dots, N$, solve the following problem:
 The input is given from Standard Input in the following format:
 
 $N$ $K$
+
 $A_1$ $A_2$ $\dots$ $A_N$
 
 
@@ -47,3 +48,5 @@ For $i=4$, choosing $A_4$ and $A_2$ yields $\gcd(\lbrace 7,4 \rbrace) = 1$, whic
 For $i=5$, choosing $A_5$ and $A_3$ yields $\gcd(\lbrace 12,6 \rbrace) = 6$, which is the maximum.
 
 --------------
+
+对于每一个 $A_i$, 
